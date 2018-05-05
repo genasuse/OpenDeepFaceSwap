@@ -17,7 +17,7 @@ if __name__ == "__main__":
     os_utils.set_process_lowest_prio()
 
     parser = argparse.ArgumentParser()    
-    parser.add_argument('--tf-suppress-std', action="store_true", dest="tf_suppress_std", default=False, help="Suppress tensorflow initialization info. May not works on some python builds such as anaconda python 3.6.4. If you can fix it, you are welcome.")
+    parser.add_argument('--tf-suppress-std', action="store_true", dest="tf_suppress_std", default=False, help="Suppress tensorflow initialization info. May not work on some python builds such as anaconda python 3.6.4. If you can fix it, you are welcome.")
  
     subparsers = parser.add_subparsers()
     
@@ -31,7 +31,7 @@ if __name__ == "__main__":
             multi_gpu=arguments.multi_gpu,
             manual_fix=arguments.manual_fix)
         
-    extract_parser = subparsers.add_parser( "extract", help="Extract the faces from a pictures.")
+    extract_parser = subparsers.add_parser( "extract", help="Extract the faces from pictures.")
     extract_parser.add_argument('--input-dir', required=True, action=fixPathAction, dest="input_dir", help="Input directory. A directory containing the files you wish to process.")
     extract_parser.add_argument('--output-dir', required=True, action=fixPathAction, dest="output_dir", help="Output directory. This is where the extracted files will be stored.")
     extract_parser.add_argument('--debug', action="store_true", dest="debug", default=False, help="Writes debug images to [output_dir]_debug\ directory.")    
